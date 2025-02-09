@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",serif;
+    background-color: rgb(250,246,246);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.container{
+    max-width: 1100px;
+    width: 100%;
+    padding: 20px;
+}
+
+.h1{
+    font-family: "Poppins",serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(152,33,33);
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 50px;
+}
+
+.letter-open{
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.letter{
+    font-size: 13px;
+    font-weight: bold;
+    rotate: -10deg;
+    margin-left: 31px;
+    margin-top: 160px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+
+.letter-p{
+    margin: 10px 7px 7px 10px;
+    font-family: "Poppins",serif;
+   
+}
+
+.mainPhoto{
+    width: 190px;
+    height: 250px;
+    margin-left: 50px;
+}
+
+.record{
+    position: absolute;
+    height: 190px;
+    width: 160px;
+    margin-top: -560px;
+    margin-left: 25px;
+    
+}
+
+.active{
+    animation: spin 6s linear infinite;
+}
+
+.btn{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 270px;
+    background: #fffffff3;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: "Poppins",serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    rotate: -10deg;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.btn-2{
+  visibility: hidden;
+    position: absolute;
+    top : 200px;
+    margin-left: 500px;
+    background: #f1eeeef3;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: "Poppins",serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    rotate: -10deg;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.btn-2:hover{
+    background-color: #fffffff3;
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+
+
+
+.btn-stop{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 270px;
+    background: #fffffff3;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: "Poppins",serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    rotate: -10deg;
+    z-index: 5;
+    cursor: pointer;
+    /* visibility: hidden; */
+}
+
+
+.shown{
+    visibility: visible;
+}
+
+
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.hearts {
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .one,
+  .two,
+  .three,
+  .four,
+  .five {
+    background-color: red;
+    display: inline-block;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 10px;
+    top: 50px;
+  }
+  
+  .one:before,
+  .one:after,
+  .two:before,
+  .two:after,
+  .three:before,
+  .three:after,
+  .four:before,
+  .four:after,
+  .five:before,
+  .five:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+  }
+  
+  .one:before,
+  .two:before,
+  .three:before,
+  .four:before,
+  .five:before {
+    top: -5px;
+    left: 0;
+  }
+  
+  .one:after,
+  .two:after,
+  .three:after,
+  .four:after,
+  .five:after {
+    left: 5px;
+    top: 0;
+  }
+  
+  .one {
+    left: 10px;
+    animation: heart 1s ease-out infinite;
+  }
+  
+  .two {
+    left: 30px;
+    animation: heart 2s ease-out infinite;
+  }
+  
+  .three {
+    left: 50px;
+    animation: heart 1.5s ease-out infinite;
+  }
+  
+  .four {
+    left: 70px;
+    animation: heart 2.3s ease-out infinite;
+  }
+  
+  .five {
+    left: 90px;
+    animation: heart 1.7s ease-out infinite;
+  }
+  
+  @keyframes heart {
+    0% {
+      transform: translateY(0) rotate(-45deg) scale(0.3);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) rotate(-45deg) scale(1.3);
+      opacity: 0.5;
+    }
+  }
