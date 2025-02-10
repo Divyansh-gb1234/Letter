@@ -1,36 +1,65 @@
-const button = document.querySelector(".btn");
+document.addEventListener('DOMContentLoaded', function() {
+    const letterBtn = document.getElementById('letterBtn');
+    const arrow = document.getElementById('arrow');
+    const letterOverlay = document.getElementById('letterOverlay');
+    const letterClose = document.querySelector('.letter-close');
+    const btn = document.querySelector('.btn');
+    const btnStop = document.querySelector('.btn-stop');
+    const audio = document.querySelector('.audio');
+    const record = document.querySelector('.record');
 
-const record = document.querySelector(".record");
+    
+    btn.addEventListener('click', function() {
+        audio.play();
+        record.classList.add('active');
+        btn.classList.add('hidden');
+        btnStop.classList.remove('hidden');
+        btnStop.classList.add('shown');
+       
+        letterBtn.style.visibility = 'visible';
+        arrow.style.visibility = 'visible';
+    });
 
-const audio = document.querySelector(".audio");
+    btnStop.addEventListener('click', function() {
+        audio.pause();
+        record.classList.remove('active');
+        btnStop.classList.remove('shown');
+        btnStop.classList.add('hidden');
+        btn.classList.remove('hidden');
+        letterBtn.style.visibility = 'hidden';
+        arrow.style.visibility = 'hidden';
+    });
 
-const stopBtn = document.querySelector(".btn-stop");
+   
+    letterBtn.addEventListener('click', function() {
+        letterOverlay.classList.remove('hidden');
+       
+        setTimeout(() => {
+            letterOverlay.classList.add('show');
+        }, 10);
+    });
 
-const btn2  = document.getElementById("letterBtn")
+    letterClose.addEventListener('click', closeLetter);
 
-const arrow = document.getElementById("arrow");
+    
+    letterOverlay.addEventListener('click', function(e) {
+        if (e.target === letterOverlay) {
+            closeLetter();
+        }
+    });
 
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !letterOverlay.classList.contains('hidden')) {
+            closeLetter();
+        }
+    });
 
-button.addEventListener("click", function () {
-  record.classList.add("active");
-  btn2.classList.remove("hidden")
-  btn2.classList.add("shown");
-  arrow.classList.remove("hidden")
-  arrow.classList.add("shown");
-  stopBtn.classList.remove("hidden")
-  stopBtn.classList.add("shown");
-  button.classList.add("hidden")
-  audio.play();
-});
-
-stopBtn.addEventListener("click", function () {
-  record.classList.remove("active");
-  stopBtn.classList.add("hidden");
-  stopBtn.classList.remove("shown");
-  btn2.classList.add("hidden");
-  btn2.classList.remove("shown");
-  arrow.classList.add("hidden");
-  arrow.classList.remove("shown");
-  button.classList.remove("hidden")
-  audio.pause();
+    function closeLetter() {
+        letterOverlay.classList.remove('show');
+        
+        setTimeout(() => {
+            letterOverlay.classList.add('hidden');
+        }, 300);
+    }
 });
